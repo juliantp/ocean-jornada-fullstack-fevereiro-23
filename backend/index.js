@@ -87,7 +87,11 @@ async function main() {
     res.send("Registro removido com sucesso!");
   });
 
-  app.listen(3000);
+  const port = process.env.PORT || 3000; // linha adicionada para conectar com o render.com 
+  app.listen(port, function () {
+    console.log("Servidor rodando na porta: " + port);
+  });
+  // app.listen(3000);
 }
 
 main();
